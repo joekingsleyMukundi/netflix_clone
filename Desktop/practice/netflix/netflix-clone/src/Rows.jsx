@@ -10,7 +10,7 @@ const baseUrl = "https://image.tmdb.org/t/p/original/";
 function Rows(props) {
   const [movies, setMovies] = useState([]);
   //for trailer url
-  const [trailerURL, setTrailerURL] = useState("");
+  const [trailerURL, setTrailerURL] = useState(false);
   // now to fetch the pesific informar=tion when a certain row loads
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function Rows(props) {
     },
   };
   const handleClick = (movie) => {
-    if (trailerURL) {
+    if (trailerURL === true) {
       setTrailerURL("");
     } else {
       movieTrailer(movie?.name || "")
