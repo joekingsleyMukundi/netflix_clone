@@ -28,14 +28,15 @@ function Rows(props) {
     height: "390",
     width: "100%",
     playerVars: {
-      //https: //developers.google.com/youtube/player_parametersssssss
+      //https: //developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
   const handleClick = (movie) => {
     if (trailerURL === true) {
-      setTrailerURL("");
+      setTrailerURL(false);
     } else {
+      setTrailerURL(true);
       movieTrailer(movie?.name || "")
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
